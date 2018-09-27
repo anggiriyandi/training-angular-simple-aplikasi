@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { PengajuanModel } from './pengajuan.model';
 
 @Component({
@@ -7,11 +7,16 @@ import { PengajuanModel } from './pengajuan.model';
   styleUrls: ['./pengajuan.component.css']
 })
 export class PengajuanComponent implements OnInit {
-
   @Input() pengajuan: PengajuanModel;
+  @Output() tambahPengajuanEmitter = new EventEmitter<PengajuanModel>();
+
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit(){
+  }
+
+  tambahPengajuan() {
+    this.tambahPengajuanEmitter.emit(this.pengajuan);
   }
 
 }

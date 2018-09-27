@@ -9,6 +9,8 @@ import { PengajuanModel } from '../pengajuan/pengajuan.model';
 export class SimulasiComponent implements OnInit {
 
   pengajuan: PengajuanModel = new PengajuanModel();
+  daftarPengajuan : Pengajuan[] = [];
+  totalNilai : number = 0;
 
   pilihanKaratase = [
     {'value':'1', 'label': '2'},
@@ -22,6 +24,11 @@ export class SimulasiComponent implements OnInit {
 
   lanjutkanPengajuan(): void{
     this.pengajuan.nilai = 55000 * this.pengajuan.beratBersih;
+    this.totalNilai = this.totalNilai + this.pengajuan.nilai;
+  }
+
+  tambahPengajuan(data){
+    this.daftarPengajuan.push(data);
   }
 
 }

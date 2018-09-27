@@ -37,4 +37,44 @@
 
 <hr>
 
-<app-pengajuan *ngIf="pengajuan.nilai" [pengajuan]="pengajuan"></app-pengajuan>
+<app-pengajuan 
+(tambahPengajuanEmitter)="tambahPengajuan($event)"
+*ngIf="pengajuan.nilai" [pengajuan]="pengajuan"></app-pengajuan>
+
+<h2>Daftar Pengajuan</h2>
+
+<div *ngIf="daftarPengajuan.length < 1">
+	Belum ada data pengajuan
+</div>
+
+<div *ngIf="daftarPengajuan.length > 0">
+<table class="table table-bordered table-hovered table-striped">
+	<thead>
+		<tr>
+			<th>No</th>
+			<th>Berat Kotor</th>
+			<th>Berat Bersih</th>
+			<th>Karatase</th>
+			<th>Nilai</th>
+			<th>&nbsp;</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr *ngFor="let p of daftarPengajuan; let i = index">
+			<td>{{i + 1}}</td>
+			<td>{{p.beratKotor}}</td>
+			<td>{{p.beratBersih}}</td>
+			<td>{{p.karatase}} karat</td>
+			<td>{{p.nilai}}</td>
+			<td>
+				<button class="btn btn-sm btn-default">hapus</button>
+			</td>
+		</tr>
+
+		<tr>
+			<td colspan="5"><b>Total</b></td>
+			<td>Rp. {{totalNilai}}</td>
+			<td>&nbsp;</td>
+		</tr>
+	</tbody>
+</table>
