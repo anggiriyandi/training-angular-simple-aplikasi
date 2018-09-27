@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { PengajuanModel } from './pengajuan.model';
 
 @Component({
   selector: 'app-pengajuan',
@@ -7,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PengajuanComponent implements OnInit {
 
+  @Input() pengajuan: PengajuanModel;
   constructor() { }
 
   ngOnInit() {

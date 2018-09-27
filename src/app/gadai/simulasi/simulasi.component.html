@@ -1,3 +1,40 @@
-<p>
-  simulasi works!
-</p>
+<h1>Simulasi Gadai</h1>
+
+<form class="form-horizontal">
+	<div class="form-group">
+      <label for="beratKotor" class="col-sm-2 control-label">Berat Kotor</label>
+      <div class="col-sm-6">
+        <input type="text"
+        [(ngModel)]="pengajuan.beratKotor"
+			name="beratKotor"
+		class="form-control" id="beratKotor" placeholder="Berat Kotor dalam gram">
+      </div>
+    </div>
+	<div class="form-group">
+      <label for="beratBersih" class="col-sm-2 control-label">Berat Bersih</label>
+      <div class="col-sm-6">
+        <input type="text" 
+        [(ngModel)]="pengajuan.beratBersih"
+			name="beratBersih"
+		class="form-control" id="beratBersih" placeholder="Berat Bersih dalam gram">
+      </div>
+    </div>
+	<div class="form-group">
+      <label for="beratBersih" class="col-sm-2 control-label">Karatase</label>
+<div class="col-sm-6">
+	<select class="form-control" name="karatase" [(ngModel)]="pengajuan.karatese">
+		<option *ngFor="let k of pilihanKaratase" [value]="k.value">{{k.label}}</option>
+	</select>
+  </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button (click)="lanjutkanPengajuan()" class="btn btn-default">Lanjutkan</button>
+    </div>
+  </div>
+</form>
+
+<hr>
+
+<app-pengajuan *ngIf="pengajuan.nilai" [pengajuan]="pengajuan"></app-pengajuan>

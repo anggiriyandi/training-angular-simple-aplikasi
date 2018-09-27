@@ -1,3 +1,12 @@
-<p>
-  pengajuan works!
-</p>
+<form class="form-horizontal">
+	<div class="form-group">
+      <label for="beratKotor" class="col-sm-2 control-label">Nilai</label>
+      <span>{{pengajuan.nilai}}</span>
+</div>
+
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button (click)="lanjutkanPengajuan()" class="btn btn-default">Lanjutkan</button>
+    </div>
+  </div>
+</form>

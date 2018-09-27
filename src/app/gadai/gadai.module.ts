@@ -4,6 +4,7 @@ import { SimulasiComponent } from './simulasi/simulasi.component';
 import { PengajuanComponent } from './pengajuan/pengajuan.component';
 import { Routes, RouterModule } from '@angular/router';
 import { AuthGuard } from '../auth-guard';
+import { FormsModule } from '@angular/forms';
 
 const routes: Routes = [
   {path: 'gadai/simulasi', component: SimulasiComponent, canActivate: [AuthGuard] },
@@ -13,7 +14,8 @@ const routes: Routes = [
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    FormsModule
   ],
   declarations: [SimulasiComponent, PengajuanComponent]
 })
