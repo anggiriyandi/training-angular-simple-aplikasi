@@ -13,6 +13,7 @@ import { FormsModule } from '@angular/forms';
     FormsModule
   ],
   declarations: [NavbarComponent, RegisterComponent, LoginComponent],
-  exports: [NavbarComponent, LoginComponent, RegisterComponent]
+  exports: [NavbarComponent, LoginComponent, RegisterComponent],
+  providers: [SharedModule]
 })
 export class SharedModule { }
